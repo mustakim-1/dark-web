@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weapon Selling - Dark Web Defender</title>
+<style>
+  /* Reset default browser styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #121212;
+    color: #fff;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .header {
+    background-color: #1a1a1a;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+  }
+
+  .header h1 {
+    font-size: 2.5rem;
+    color: #00ff00; /* Green */
+  }
+
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .box {
+    background-color: #1a1a1a;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    border-radius: 5px;
+    padding: 20px;
+    flex: 1 1 calc(33.333% - 40px); /* 3 boxes per row */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth animation */
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 1s forwards; /* Fade in animation */
+  }
+
+  .box:nth-child(1) { animation-delay: 0.3s; }
+  .box:nth-child(2) { animation-delay: 0.5s; }
+  .box:nth-child(3) { animation-delay: 0.7s; }
+  .box:nth-child(4) { animation-delay: 0.9s; }
+  .box:nth-child(5) { animation-delay: 1s; }
+  .box:nth-child(6) { animation-delay: 1.3s; }
+  .box:nth-child(7) { animation-delay: 1.5s; }
+  .box:nth-child(8) { animation-delay: 1.7s; }
+  .box:nth-child(9) { animation-delay: 1.9s; }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1; /* Final state is fully visible */
+    }
+  }
+
+  .box:hover {
+    transform: scale(1.05); /* Scale up the box on hover */
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.7); /* Enhance shadow on hover */
+  }
+
+  .box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+
+  .box h3 {
+    color: #00ff00; /* Green */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .box p {
+    flex-grow: 1;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    background-color: #00ff00; /* Green */
+    color: #000; /* Black text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #ff0000; /* Red on hover */
+  }
+
+  .footer {
+    background-color: #1a1a1a;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 -5px 15px rgba(0, 255, 0, 0.5);
+    color: #888;
+    margin-top: 40px;
+  }
+
+  /* Message to indicate JavaScript dynamic content */
+  .js-indicator {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: rgba(0, 255, 0, 0.8);
+    color: #000;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    z-index: 1000;
+    display: none; /* Initially hidden */
+    animation: fadeInMessage 1s ease-out forwards;
+  }
+
+  @keyframes fadeInMessage {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .box {
+      flex: 1 1 calc(50% - 40px); /* 2 boxes per row on smaller screens */
+    }
+  }
+
+  @media (max-width: 600px) {
+    .box {
+      flex: 1 1 calc(100% - 40px); /* 1 box per row on mobile */
+    }
+  }
+</style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>Weapon Selling</h1>
+    </div>
+  </header>
+  
+  <main class="container">
+    <div class="grid" id="weaponGrid">
+      <!-- Weapon boxes will be dynamically added here -->
+    </div>
+  </main>
+  
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Dark Web Defender. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript to dynamically populate weapon boxes -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const weaponsData = [
+        { id: 1, title: "AK 47", description: "PRICE: 50000$", image: "/assingment0.1/images/ak-47-wallpaper-preview.jpg" },
+        { id: 2, title: "UMP", description: "PRICE: 45000$", image: "/assingment0.1/images/wp6821372.webp" },
+        { id: 3, title: "M4A1", description: "PRICE: 40000$", image: "/assingment0.1/images/gun-m4a1-military-police-wallpaper-preview.jpg" },
+        { id: 4, title: "P90", description: "PRICE: 30000$", image: "/assingment0.1/images/fn-p90-subfusil-gun.jpg" },
+        { id: 5, title: "M60", description: "PRICE: 75000$", image: "/assingment0.1/images/njZrL6.jpg" },
+        { id: 6, title: "M197", description: "PRICE: 5000$", image: "/assingment0.1/images/thumb-1920-593021.jpg" },
+        { id: 7, title: "DESERT EAGLE", description: "PRICE: 7000$", image: "/assingment0.1/images/nFwpKz.jpeg" },
+        { id: 8, title: "BIZON", description: "PRICE: 25000$", image: "/assingment0.1/images/PP19Screenshot07-1920x1080-a8dd306656c19800ad803775f7f6a2a4.avif" },
+        { id: 9, title: "M82B", description: "PRICE: 80000$", image: "/assingment0.1/images/345700.jpg" }
+      ];
+
+      const weaponGrid = document.getElementById('weaponGrid');
+
+      weaponsData.forEach(weapon => {
+        const box = document.createElement('div');
+        box.classList.add('box');
+        box.innerHTML = `
+          <img src="${weapon.image}" alt="${weapon.title}">
+          <h3>${weapon.title}</h3>
+          <p>${weapon.description}</p>
+          <a href="#" class="btn">Read More</a>
+        `;
+        weaponGrid.appendChild(box);
+      });
+
+      // Show message to indicate content is dynamically loaded with JavaScript
+      const jsIndicator = document.createElement('div');
+      jsIndicator.classList.add('js-indicator');
+      jsIndicator.textContent = 'Content loaded dynamically with JavaScript';
+      document.body.appendChild(jsIndicator);
+    });
+  </script>
+</body>
+</html>

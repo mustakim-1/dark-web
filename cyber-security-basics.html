@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Security Basics</title>
+<style>
+  /* Reset default browser styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #121212;
+    color: #fff;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid with minimum item width of 250px */
+    gap: 20px; /* Gap between grid items */
+  }
+
+  .box {
+    background-color: #1a1a1a;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .box:hover {
+    transform: translateY(-5px); /* Lift the box on hover */
+  }
+
+  .box img {
+    width: 100%; /* Ensure the image fills the box */
+    border-radius: 10px 10px 0 0; /* Rounded corners on top */
+  }
+
+  .box-content {
+    padding: 20px 0;
+  }
+
+  .box h3 {
+    color: #00ff00; /* Green */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .box p {
+    color: #ccc; /* Lighter text color */
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .box .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00ff00; /* Green */
+    color: #000; /* Black text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+  }
+
+  .box .btn:hover {
+    background-color: #ff0000; /* Red on hover */
+  }
+
+  .search-container {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .search-input {
+    padding: 10px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 5px;
+    border: 1px solid #00ff00;
+    font-size: 1rem;
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+
+  .no-result {
+    text-align: center;
+    color: #ff0000;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="text-align: center; margin-bottom: 30px;">Cyber Security Basics</h1>
+    <div class="search-container">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search...">
+    </div>
+    <div id="gridContainer" class="grid">
+      <div class="box">
+        <img src="image1.jpg" alt="Image 1">
+        <div class="box-content">
+          <h3>Network Security</h3>
+          <p>Learn about securing networks from unauthorized access and cyber threats.</p>
+          <a href="#" class="btn">Explore</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="image2.jpg" alt="Image 2">
+        <div class="box-content">
+          <h3>Data Encryption</h3>
+          <p>Understand the importance of encrypting data to protect sensitive information.</p>
+          <a href="#" class="btn">Explore</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="image3.jpg" alt="Image 3">
+        <div class="box-content">
+          <h3>Phishing Awareness</h3>
+          <p>Recognize and avoid phishing attacks to safeguard personal and organizational data.</p>
+          <a href="#" class="btn">Explore</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="image4.jpg" alt="Image 4">
+        <div class="box-content">
+          <h3>Malware Protection</h3>
+          <p>Learn how to protect your devices from malicious software and viruses.</p>
+          <a href="#" class="btn">Explore</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="image5.jpg" alt="Image 5">
+        <div class="box-content">
+          <h3>Password Security</h3>
+          <p>Discover best practices for creating and managing strong passwords.</p>
+          <a href="#" class="btn">Explore</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="image6.jpg" alt="Image 6">
+        <div class="box-content">
+          <h3>Two-Factor Authentication</h3>
+          <p>Enhance your security with two-factor authentication methods.</p>
+          <a href="#" class="btn">Explore</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="image7.jpg" alt="Image 7">
+        <div class="box-content">
+          <h3>Social Engineering</h3>
+          <p>Understand the techniques used in social engineering and how to defend against them.</p>
+          <a href="#" class="btn">Explore</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="image8.jpg" alt="Image 8">
+        <div class="box-content">
+          <h3>Secure Browsing</h3>
+          <p>Learn how to browse the web securely and protect your online privacy.</p>
+          <a href="#" class="btn">Explore</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="image9.jpg" alt="Image 9">
+        <div class="box-content">
+          <h3>Mobile Security</h3>
+          <p>Discover how to secure your mobile devices from threats.</p>
+          <a href="#" class="btn">Explore</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="image10.jpg" alt="Image 10">
+        <div class="box-content">
+          <h3>Cloud Security</h3>
+          <p>Understand the measures to secure data stored in the cloud.</p>
+          <a href="#" class="btn">Explore</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="image11.jpg" alt="Image 11">
+        <div class="box-content">
+          <h3>Incident Response</h3>
+          <p>Learn how to respond effectively to cyber security incidents.</p>
+          <a href="#" class="btn">Explore</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="image12.jpg" alt="Image 12">
+        <div class="box-content">
+          <h3>Identity Theft</h3>
+          <p>Understand the risks of identity theft and how to protect yourself.</p>
+          <a href="#" class="btn">Explore</a>
+        </div>
+      </div>
+    </div>
+    <div id="noResult" class="no-result" style="display: none;">No result found</div>
+  </div>
+  <script>
+    document.getElementById('searchInput').addEventListener('input', function() {
+      const query = this.value.toLowerCase();
+      const boxes = document.querySelectorAll('.box');
+      let hasResult = false;
+
+      boxes.forEach(box => {
+        const title = box.querySelector('h3').textContent.toLowerCase();
+        if (title.includes(query)) {
+          box.style.display = 'block';
+          hasResult = true;
+        } else {
+          box.style.display = 'none';
+        }
+      });
+
+      document.getElementById('noResult').style.display = hasResult ? 'none' : 'block';
+    });
+  </script>
+</body>
+</html>

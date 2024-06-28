@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dark Web Defender - Your Ultimate Cyber Security Guide</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+   
+  }
+
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    line-height: 1.6;
+  }
+
+  .container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .header {
+    background-color: #1a1a1a;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+
+  .header h1 {
+    font-size: 2.5rem;
+    color: #00ff00;
+    margin-bottom: 10px;
+  }
+
+  .nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .nav li {
+    margin: 0 15px;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: #00ff00;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  .nav a:hover {
+    color: #ff0000;
+  }
+
+  .main-content {
+    padding: 20px 0;
+  }
+
+  .welcome-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #1a1a1a;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  .welcome-section h2 {
+    font-size: 3rem;
+    color: #00ff00;
+    margin-bottom: 20px;
+  }
+
+  .welcome-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .resources-section {
+    text-align: center;
+  }
+
+  .resources-section .container {
+    animation: fadeIn 2s ease-in-out;
+   
+  }
+
+  .resources-section h2 {
+    font-size: 2.5rem;
+    color: #00ff00;
+    margin-bottom: 20px;
+  }
+
+  .resources-section p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    
+  }
+
+  .resources-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .resource-box {
+    flex: 1 1 calc(33.333% - 20px);
+    padding: 30px 20px;
+    background-color: #1a1a1a;
+    box-shadow: 0 0 20px rgba(103, 102, 102, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+  }
+
+  .resource-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.8);
+  }
+
+  .resource-box h3 {
+    margin-bottom: 15px;
+    color: #00ff00;
+    font-size: 1.5rem;
+  }
+
+  .resource-box a {
+    text-decoration: none;
+    color: #00ff00;
+    transition: color 0.3s ease;
+  }
+
+  .resource-box a:hover {
+    color: #ff0000;
+  }
+
+  .footer {
+    background-color: #1a1a1a;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 -5px 15px rgba(0, 255, 0, 0.5);
+    color: #888;
+    border-radius: 10px;
+    margin-top: 30px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    background-color: #00ff00;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #ff0000;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%; 
+  }
+
+  .header {
+    border-radius: 0; 
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .nav ul {
+    flex-direction: column; 
+    margin-top: 20px;
+  }
+
+  .nav li {
+    margin: 10px 0;
+  }
+
+  .welcome-section {
+    height: auto; 
+    padding: 20px;
+  }
+
+  .welcome-section h2 {
+    font-size: 2.5rem; 
+  }
+
+  .resources-row {
+    flex-direction: column;
+  }
+
+  .resource-box {
+    flex: 1 1 calc(100% - 20px); 
+    margin-bottom: 20px; 
+  }
+
+  .footer {
+    border-radius: 0; 
+  }
+}
+
+</style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>Dark Web Defender</h1>
+      <nav class="nav">
+        <ul>
+          <li><a href="#welcome">Welcome</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#tools">Tools</a></li>
+          <li><a href="#forum">Forum</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <main class="main-content">
+    <section id="welcome" class="welcome-section">
+      <div class="container welcome-text">
+        <h2>Welcome to Dark Web Defender</h2>
+        <p>Your ultimate guide to navigating and securing yourself against the dark web. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nesciunt aspernatur, debitis soluta nulla doloremque dolorum obcaecati labore quas non maiores quos commodi ex at? Impedit nostrum odio exercitationem dolore veniam ducimus ea enim deserunt quis. Sunt at quia deleniti ab quos, blanditiis modi quae, excepturi amet quisquam repudiandae consequuntur.</p>
+        <a href="#resources" class="btn">Get Started</a>
+      </div>
+    </section>
+
+   <div class="section-resources">
+    <section id="resources" class="resources-section">
+      <div class="container">
+        <h2>Resources</h2>
+        <p>Explore our extensive resources to understand and protect yourself online.</p>
+        <div class="resources-row">
+          <div class="resource-box">
+            <h3>Cyber Security Basics</h3>
+            <a href="/cyber-security-basics.html">Learn More</a>
+          </div>
+          <div class="resource-box">
+            <h3>Professional Killer</h3>
+            <a href="/Professional Killer.html">Learn More</a>
+          </div>
+          <div class="resource-box">
+            <h3>BODY GUARDS</h3>
+            <a href="/body-gaurds.html">Learn More</a>
+          </div>
+          <div class="resource-box">
+            <h3>Weapon Selling</h3>
+            <a href="/weapon-selling.html">Learn More</a>
+          </div>
+          <div class="resource-box">
+            <h3>Ethical Hacking Practices</h3>
+            <a href="/ethical-hacking-practices.html">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+   </div>
+
+    <section id="tools" class="resources-section">
+      <div class="container">
+        <h2>Tools</h2>
+        <p>Discover essential tools to safeguard your digital presence.</p>
+        <div class="resources-row">
+          <div class="resource-box">
+            <h3>Best VPNs</h3>
+            <a href="#">Learn More</a>
+          </div>
+          <div class="resource-box">
+            <h3>Top Antivirus Software</h3>
+            <a href="#">Learn More</a>
+          </div>
+          <div class="resource-box">
+            <h3>Password Managers</h3>
+            <a href="#">Learn More</a>
+          </div>
+          <div class="resource-box">
+            <h3>Encryption Tools</h3>
+            <a href="#">Learn More</a>
+          </div>
+          <div class="resource-box">
+            <h3>Security Auditing Software</h3>
+            <a href="#">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="forum" class="resources-section">
+      <div class="container">
+        <h2>Forum</h2>
+        <p>Join our community and discuss cyber security topics with experts and peers.</p>
+        <div class="resources-row">
+          <div class="resource-box">
+            <h3>General Discussions</h3>
+            <a href="#">Learn More</a>
+          </div>
+          <div class="resource-box">
+            <h3>Security News</h3>
+            <a href="#">Learn More</a>
+          </div>
+          <div class="resource-box">
+            <h3>Tips and Tricks</h3>
+            <a href="#">Learn More</a>
+          </div>
+          <div class="resource-box">
+            <h3>Help and Support</h3>
+            <a href="#">Learn More</a>
+          </div>
+          <div class="resource-box">
+            <h3>Certifications and Training</h3>
+            <a href="#">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Dark Web Defender. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
